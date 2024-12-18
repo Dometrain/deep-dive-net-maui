@@ -1,0 +1,46 @@
+name: Mobile
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches: 
+      - "*"
+
+jobs:
+  BuildAllProjects:
+    strategy:
+      matrix:
+        os: [macos-15, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+
+    # Install .NET SDK
+    - name: Setup .NET 8.0.x
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.x' # Adjust to your required .NET SDK version
+
+    - name: Setup .NET 9.0.x
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.x' # Adjust to your required .NET SDK version
+
+    - name: Install .NET MAUI
+      run: 'dotnet workload install maui'
+
+    - name: Install Xcode
+      if: runner.os == 'macOS'
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Display .NET Info
+      run: 'dotnet --info'
+
+    - name: Build + Test Final Course Solution, Unit Tests
+      run: |
+        dotnet build -c Release "./8. Unit Testing/src/0. Unit Tests/HelloMaui.sln"
+        dotnet test -c Release "./8. Unit Testing/src/0. Unit Tests/HelloMaui.sln"

@@ -1,0 +1,7 @@
+query GetAllLibraries{
+    libraries {
+        description,
+        imageSource,
+        title
+    }
+}

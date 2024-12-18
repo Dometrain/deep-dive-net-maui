@@ -1,0 +1,30 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Amazon.Lambda.APIGatewayEvents" Version="2.7.1"/>
+        <PackageVersion Include="Amazon.Lambda.AspNetCoreServer" Version="9.0.3"/>
+        <PackageVersion Include="Amazon.Lambda.AspNetCoreServer.Hosting" Version="1.7.3"/>
+        <PackageVersion Include="Amazon.Lambda.Core" Version="2.5.0"/>
+        <PackageVersion Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.4"/>
+        <PackageVersion Include="AsyncAwaitBestPractices" Version="9.0.0"/>
+        <PackageVersion Include="coverlet.collector" Version="6.0.2"/>
+        <PackageVersion Include="HotChocolate.AspNetCore" Version="14.2.0"/>
+        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0"/>
+        <PackageVersion Include="Microsoft.Maui.Controls" Version="9.0.21"/>
+        <PackageVersion Include="CommunityToolkit.Maui" Version="10.0.0"/>
+        <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="5.1.0"/>
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+        <PackageVersion Include="MemoryAnalyzers" Version="0.1.0-beta.5"/>
+        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
+        <PackageVersion Include="NUnit" Version="4.2.2"/>
+        <PackageVersion Include="NUnit.Analyzers" Version="4.4.0"/>
+        <PackageVersion Include="NUnit3TestAdapter" Version="4.6.0"/>
+        <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0"/>
+        <PackageVersion Include="sqlite-net-pcl" Version="1.9.172"/>
+        <PackageVersion Include="SQLitePCLRaw.bundle_green" Version="2.1.10"/>
+        <PackageVersion Include="StrawberryShake.Maui" Version="14.2.0"/>
+    </ItemGroup>
+</Project>

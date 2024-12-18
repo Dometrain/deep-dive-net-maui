@@ -1,0 +1,16 @@
+schema {
+  query: Query
+}
+
+type Query {
+  "Returns all libraries"
+  libraries: [LibraryModel!]!
+  "Returns all libraries"
+  library(title: String!): LibraryModel!
+}
+
+type LibraryModel {
+  title: String!
+  description: String!
+  imageSource: String!
+}
