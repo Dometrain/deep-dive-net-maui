@@ -9,7 +9,7 @@ on:
       - "*"
 
 jobs:
-  BuildAllProjects:
+  mobile:
     strategy:
       matrix:
         os: [macos-15, windows-latest]
