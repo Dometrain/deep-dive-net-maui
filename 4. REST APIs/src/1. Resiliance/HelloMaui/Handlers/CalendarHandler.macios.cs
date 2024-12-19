@@ -97,6 +97,8 @@ public partial class CalendarHandler : ViewHandler<ICalendarView, UICalendarView
 
     sealed class CalendarSelectionSingleDateDelegate(ICalendarView calendarView) : UICalendarSelectionSingleDateDelegate
     {
+        public override bool CanSelectDate(UICalendarSelectionSingleDate selection, NSDateComponents? dateComponents) => true;
+
         public override void DidSelectDate(UICalendarSelectionSingleDate selection, NSDateComponents? dateComponents)
         {
             selection.SelectedDate = dateComponents;
