@@ -19,7 +19,7 @@
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
         <PackageVersion Include="MemoryAnalyzers" Version="0.1.0-beta.5"/>
         <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
-        <PackageVersion Include="NUnit" Version="4.2.2"/>
+        <PackageVersion Include="NUnit" Version="4.3.2"/>
         <PackageVersion Include="NUnit.Analyzers" Version="4.4.0"/>
         <PackageVersion Include="NUnit3TestAdapter" Version="4.6.0"/>
         <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0"/>
