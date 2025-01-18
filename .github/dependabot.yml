@@ -6,6 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "nuget"
-    directory: "/"
+    directory: "/8. Unit Testing/src/0. Unit Tests/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
