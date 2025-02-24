@@ -13,7 +13,7 @@
         <PackageVersion Include="coverlet.collector" Version="6.0.4"/>
         <PackageVersion Include="HotChocolate.AspNetCore" Version="14.2.0"/>
         <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.1.0"/>
-        <PackageVersion Include="Microsoft.Maui.Controls" Version="9.0.21"/>
+        <PackageVersion Include="Microsoft.Maui.Controls" Version="9.0.30"/>
         <PackageVersion Include="CommunityToolkit.Maui" Version="10.0.0"/>
         <PackageVersion Include="CommunityToolkit.Maui.Markup" Version="5.1.0"/>
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
