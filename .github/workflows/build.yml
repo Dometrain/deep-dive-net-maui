@@ -42,5 +42,5 @@ jobs:
 
     - name: Build + Test Final Course Solution, Unit Tests
       run: |
-        dotnet build -c Release "./8. Unit Testing/src/0. Unit Tests/HelloMaui.sln"
-        dotnet test -c Release "./8. Unit Testing/src/0. Unit Tests/HelloMaui.sln"
+        dotnet build Release "./8. Unit Testing/src/0. Unit Tests/HelloMaui.sln"
+        dotnet test Release "./8. Unit Testing/src/0. Unit Tests/HelloMaui.sln"
