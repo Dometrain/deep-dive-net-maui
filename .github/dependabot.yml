@@ -9,3 +9,7 @@ updates:
     directory: "/8. Unit Testing/src/0. Unit Tests/"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "dotnet-sdk"
+    directory: "/"
+    schedule:
+      interval: "weekly"
