@@ -10,5 +10,5 @@ class MauiLibrariesApiService(IMauiLibraries client)
 interface IMauiLibraries
 {
 	[Get("/default/MauiLibraries")]
-	public Task<List<LibraryModel>> GetMauiLibraries();
+	Task<List<LibraryModel>> GetMauiLibraries();
 }

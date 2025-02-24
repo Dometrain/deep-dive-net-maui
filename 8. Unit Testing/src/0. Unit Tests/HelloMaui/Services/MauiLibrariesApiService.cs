@@ -10,5 +10,5 @@ public class MauiLibrariesApiService(IMauiLibraries client)
 public interface IMauiLibraries
 {
 	[Get("/default/MauiLibraries")]
-	public Task<List<LibraryModel>> GetMauiLibraries(CancellationToken token);
+	Task<List<LibraryModel>> GetMauiLibraries(CancellationToken token);
 }
