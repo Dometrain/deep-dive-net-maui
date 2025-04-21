@@ -20,7 +20,7 @@
         <PackageVersion Include="MemoryAnalyzers" Version="0.1.0-beta.5"/>
         <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0"/>
         <PackageVersion Include="NUnit" Version="4.3.2"/>
-        <PackageVersion Include="NUnit.Analyzers" Version="4.6.0"/>
+        <PackageVersion Include="NUnit.Analyzers" Version="4.7.0"/>
         <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0"/>
         <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0"/>
         <PackageVersion Include="sqlite-net-pcl" Version="1.9.172"/>
