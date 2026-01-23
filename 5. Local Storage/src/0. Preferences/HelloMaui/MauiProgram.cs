@@ -27,21 +27,21 @@ public static class MauiProgram
 
 		builder.Services.AddRefitClient<IMauiLibraries>()
 			.ConfigureHttpClient(client => client.BaseAddress = new Uri("https://6dhbgfw1de.execute-api.us-west-1.amazonaws.com"))
-			.AddStandardResilienceHandler(options => options.Retry = new MobileHttpRetryStrategyOptions() );
-			
+			.AddStandardResilienceHandler(options => options.Retry = new MobileHttpRetryStrategyOptions());
+
 		builder.Services.AddSingleton<App>();
 		builder.Services.AddSingleton<AppShell>();
 		builder.Services.AddSingleton<MauiLibrariesApiService>();
 		builder.Services.AddSingleton<WelcomePreferences>();
 		builder.Services.AddSingleton<IPreferences>(Preferences.Default);
 
-        builder.Services.AddTransient<CalendarPage>();
+		builder.Services.AddTransient<CalendarPage>();
 		builder.Services.AddTransient<ListPage, ListViewModel>();
 		builder.Services.AddTransient<DetailsPage, DetailsViewModel>();
 
 		return builder.Build();
 	}
-	
+
 	sealed class MobileHttpRetryStrategyOptions : HttpRetryStrategyOptions
 	{
 		public MobileHttpRetryStrategyOptions()

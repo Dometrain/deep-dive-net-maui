@@ -12,7 +12,7 @@ partial class DetailsViewModel : BaseViewModel, IQueryAttributable
 
 	[ObservableProperty]
 	public partial ImageSource? LibraryImageSource { get; private set; }
-	
+
 	[RelayCommand]
 	Task BackButtonTapped() => Shell.Current.GoToAsync("..", true);
 

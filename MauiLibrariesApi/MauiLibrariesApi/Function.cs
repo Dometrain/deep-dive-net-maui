@@ -10,15 +10,15 @@ namespace MauiLibrariesApi;
 
 public class Function
 {
-    
-    /// <summary>
-    /// A simple function that takes a string and does a ToUpper
-    /// </summary>
-    /// <param name="input"></param>
-    /// <param name="context"></param>
-    /// <returns></returns>
-    public APIGatewayProxyResponse FunctionHandler(ILambdaContext context)
-    {
+
+	/// <summary>
+	/// A simple function that takes a string and does a ToUpper
+	/// </summary>
+	/// <param name="input"></param>
+	/// <param name="context"></param>
+	/// <returns></returns>
+	public APIGatewayProxyResponse FunctionHandler(ILambdaContext context)
+	{
 		context.Logger.LogInformation("Get Request\n");
 
 		var serializedLibraryModels = JsonSerializer.Serialize(CreateLibraries());

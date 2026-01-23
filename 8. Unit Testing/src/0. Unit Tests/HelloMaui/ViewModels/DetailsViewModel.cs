@@ -3,7 +3,7 @@ namespace HelloMaui;
 public partial class DetailsViewModel : BaseViewModel, IQueryAttributable
 {
 	public const string LibraryQueryKey = nameof(LibraryQueryKey);
-	
+
 	[ObservableProperty]
 	public partial string LibraryTitle { get; private set; } = string.Empty;
 
@@ -12,7 +12,7 @@ public partial class DetailsViewModel : BaseViewModel, IQueryAttributable
 
 	[ObservableProperty]
 	public partial ImageSource? LibraryImageSource { get; private set; }
-	
+
 	[RelayCommand]
 	Task BackButtonTapped() => Shell.Current.GoToAsync("..", true);
 

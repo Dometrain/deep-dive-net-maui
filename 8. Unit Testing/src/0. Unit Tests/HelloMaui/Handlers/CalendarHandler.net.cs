@@ -8,12 +8,12 @@ partial class CalendarHandler : ViewHandler<ICalendarView, View>
 	{
 		throw new NotSupportedException();
 	}
-	
+
 	static void MapFirstDayOfWeek(CalendarHandler handler, ICalendarView virtualView)
 	{
 		throw new NotSupportedException();
 	}
-	
+
 	static void MapMinDate(CalendarHandler handler, ICalendarView virtualView)
 	{
 		throw new NotSupportedException();

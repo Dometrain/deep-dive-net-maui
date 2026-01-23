@@ -9,7 +9,7 @@ public partial class CalendarHandler
 	public CalendarHandler() : this(PropertyMapper, CommandMapper)
 	{
 	}
-	
+
 	public static IPropertyMapper<ICalendarView, CalendarHandler> PropertyMapper = new PropertyMapper<ICalendarView, CalendarHandler>(ViewMapper)
 	{
 		[nameof(ICalendarView.FirstDayOfWeek)] = MapFirstDayOfWeek,
@@ -17,7 +17,7 @@ public partial class CalendarHandler
 		[nameof(ICalendarView.MaxDate)] = MapMaxDate,
 		[nameof(ICalendarView.SelectedDate)] = MapSelectedDate,
 	};
-	
+
 	public static CommandMapper<ICalendarView, CalendarHandler> CommandMapper = new(ViewCommandMapper);
 
 }

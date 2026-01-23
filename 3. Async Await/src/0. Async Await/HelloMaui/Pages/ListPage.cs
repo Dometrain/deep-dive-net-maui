@@ -1,8 +1,9 @@
-﻿using CommunityToolkit.Maui.Alerts;
+﻿using AsyncAwaitBestPractices;
+using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Extensions;
 using CommunityToolkit.Maui.Views;
-using AsyncAwaitBestPractices;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 using SearchBar = Microsoft.Maui.Controls.SearchBar;
 
@@ -17,7 +18,7 @@ class ListPage : BaseContentPage<ListViewModel>
 		On<Microsoft.Maui.Controls.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
 		this.AppThemeColorBinding(BackgroundColorProperty, Colors.LightBlue, Color.FromArgb("#3b4a4f"));
-		
+
 		ToolbarItems.Add(new ToolbarItem()
 			.Text("Calendar")
 			.Invoke(item => item.Clicked += async (sender, args) => await Shell.Current.GoToAsync(AppShell.GetRoute<CalendarPage>())));
@@ -34,7 +35,7 @@ class ListPage : BaseContentPage<ListViewModel>
 					.Assign(out SearchBar searchBar)
 					.Bind(SearchBar.TextProperty,
 							getter: static (ListViewModel vm) => vm.SearchBarText,
-							setter: static (ListViewModel vm, string text) => vm.SearchBarText = text)
+							setter: static (ListViewModel vm, string? text) => vm.SearchBarText = text ?? string.Empty)
 					.Behaviors(new UserStoppedTypingBehavior
 					{
 						BindingContext = listViewModel,
@@ -51,7 +52,7 @@ class ListPage : BaseContentPage<ListViewModel>
 						Content = new CollectionView
 							{
 								CanReorderItems = true,
-								
+
 								Header = new Label()
 									.Text(".NET MAUI Libraries")
 									.AppThemeColorBinding(Label.TextColorProperty, Colors.Black, Colors.LightGray)
@@ -71,10 +72,10 @@ class ListPage : BaseContentPage<ListViewModel>
 							.Invoke(static collectionView => collectionView.SelectionChanged += HandleSelectionChanged)
 							.Bind(CollectionView.ItemsSourceProperty,
 									getter: static (ListViewModel vm) => vm.MauiLibraries)
-					}.Bind(RefreshView.IsRefreshingProperty, 
+					}.Bind(RefreshView.IsRefreshingProperty,
 							getter: static (ListViewModel vm) => vm.IsRefreshing,
 							setter: static (ListViewModel vm, bool isRefreshing) => vm.IsRefreshing = isRefreshing)
-					.Bind(RefreshView.CommandProperty, 
+					.Bind(RefreshView.CommandProperty,
 							getter: static (ListViewModel vm) => vm.RefreshActionCommand,
 							mode: BindingMode.OneTime)
 					.Margin(12, 0)
@@ -98,7 +99,7 @@ class ListPage : BaseContentPage<ListViewModel>
 			{
 				{ DetailsViewModel.LibraryQueryKey, libraryModel }
 			};
-			
+
 			await Shell.Current.GoToAsync(AppShell.GetRoute<DetailsPage>(), parameters);
 		}
 
@@ -110,7 +111,7 @@ class ListPage : BaseContentPage<ListViewModel>
 		public WelcomePopup()
 		{
 			Opened += HandlePopupOpened;
-			
+
 			Content = new Label()
 				.Text("Welcome")
 				.TextCenter()
@@ -121,11 +122,11 @@ class ListPage : BaseContentPage<ListViewModel>
 			Content.Scale = 0;
 		}
 
-		async void HandlePopupOpened(object? sender, PopupOpenedEventArgs e)
+		async void HandlePopupOpened(object? sender, EventArgs e)
 		{
 			ArgumentNullException.ThrowIfNull(Content);
-			
-			await Content.ScaleTo(1, 300, Easing.SpringOut);
+
+			await Content.ScaleToAsync(1, 300, Easing.SpringOut);
 		}
 	}
 }

@@ -2,36 +2,36 @@
 
 class App : Application
 {
-    readonly AppShell _appShell;
-    
-    public App(AppShell shell)
-    {
-        _appShell = shell;
-        
-        Resources.MergedDictionaries.Add(new HelloMaui.Resources.Styles.Colors());
-        Resources.MergedDictionaries.Add(new HelloMaui.Resources.Styles.Styles());
-    }
+	readonly AppShell _appShell;
 
-    protected override Window CreateWindow(IActivationState? activationState) => new(_appShell);
+	public App(AppShell shell)
+	{
+		_appShell = shell;
 
-    protected override void OnStart()
-    {
-        base.OnStart();
-        
-        Trace.WriteLine("*****App Started*****");
-    }
+		Resources.MergedDictionaries.Add(new HelloMaui.Resources.Styles.Colors());
+		Resources.MergedDictionaries.Add(new HelloMaui.Resources.Styles.Styles());
+	}
 
-    protected override void OnResume()
-    {
-        base.OnResume();
-        
-        Trace.WriteLine("*****App Resumed*****");
-    }
+	protected override Window CreateWindow(IActivationState? activationState) => new(_appShell);
 
-    protected override void OnSleep()
-    {
-        base.OnSleep();
-        
-        Trace.WriteLine("*****App Backgrounded*****");
-    }
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		Trace.WriteLine("*****App Started*****");
+	}
+
+	protected override void OnResume()
+	{
+		base.OnResume();
+
+		Trace.WriteLine("*****App Resumed*****");
+	}
+
+	protected override void OnSleep()
+	{
+		base.OnSleep();
+
+		Trace.WriteLine("*****App Backgrounded*****");
+	}
 }

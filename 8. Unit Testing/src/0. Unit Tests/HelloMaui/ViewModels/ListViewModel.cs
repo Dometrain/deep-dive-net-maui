@@ -13,8 +13,8 @@ public partial class ListViewModel : BaseViewModel
 	readonly LibraryModelDatabase _libraryModelDatabase;
 	readonly MauiLibrariesGraphQLService _librariesGraphQlService;
 
-	public ListViewModel(IDispatcher dispatcher, 
-							MauiLibrariesApiService mauiLibrariesApiService, 
+	public ListViewModel(IDispatcher dispatcher,
+							MauiLibrariesApiService mauiLibrariesApiService,
 							LibraryModelDatabase libraryModelDatabase,
 							MauiLibrariesGraphQLService librariesGraphQlService)
 	{
@@ -25,16 +25,16 @@ public partial class ListViewModel : BaseViewModel
 	}
 
 	public ObservableCollection<LibraryModel> MauiLibraries { get; } = [];
-	
+
 	[ObservableProperty]
 	public partial bool IsRefreshing { get; set; } = false;
 
-	[ObservableProperty] 
+	[ObservableProperty]
 	public partial string SearchBarText { get; set; } = string.Empty;
-	
+
 	[ObservableProperty]
 	public partial bool IsSearchBarEnabled { get; private set; } = true;
-	
+
 	[RelayCommand]
 	async Task RefreshAction()
 	{
@@ -43,9 +43,9 @@ public partial class ListViewModel : BaseViewModel
 		var minimumRefreshTimeTask = Task.Delay(TimeSpan.FromSeconds(1.5));
 
 		var tokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(20));
-		
+
 		var databaseLibraries = await _libraryModelDatabase.GetLibraries(tokenSource.Token).ConfigureAwait(false);
-		
+
 		try
 		{
 			if (!databaseLibraries.Any())
@@ -56,8 +56,8 @@ public partial class ListViewModel : BaseViewModel
 					{
 						await _dispatcher.DispatchAsync(() => MauiLibraries.Add(library));
 					}
-				} 
-				
+				}
+
 				await _libraryModelDatabase.InsertAllLibraries(MauiLibraries, tokenSource.Token);
 			}
 		}

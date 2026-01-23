@@ -7,7 +7,7 @@ namespace HelloMaui.Database;
 abstract class BaseDatabase
 {
 	readonly Lazy<SQLiteAsyncConnection> _sqliteDatabaseHolder;
-	
+
 	protected BaseDatabase(IFileSystem fileSystem)
 	{
 		var databasePath = Path.Combine(fileSystem.AppDataDirectory, "SqliteDatabase.db3");

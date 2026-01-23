@@ -8,25 +8,25 @@ public class CalendarView : View, ICalendarView
 	public static readonly BindableProperty SelectedDateProperty = BindableProperty.Create(nameof(SelectedDate), typeof(DateTimeOffset?), typeof(CalendarView));
 
 	public event EventHandler<SelectedDateChangedEventArgs>? SelectedDateChanged;
-	
+
 	public DayOfWeek FirstDayOfWeek
 	{
 		get => (DayOfWeek)GetValue(FirstDayOfWeekProperty);
 		set => SetValue(FirstDayOfWeekProperty, value);
 	}
-	
+
 	public DateTimeOffset MinDate
 	{
 		get => (DateTimeOffset)GetValue(MinDateProperty);
 		set => SetValue(MinDateProperty, value);
 	}
-	
+
 	public DateTimeOffset MaxDate
 	{
 		get => (DateTimeOffset)GetValue(MaxDateProperty);
 		set => SetValue(MaxDateProperty, value);
 	}
-	
+
 	public DateTimeOffset? SelectedDate
 	{
 		get => (DateTimeOffset?)GetValue(SelectedDateProperty);

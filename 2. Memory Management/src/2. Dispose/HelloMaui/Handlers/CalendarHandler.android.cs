@@ -26,7 +26,7 @@ public partial class CalendarHandler : ViewHandler<ICalendarView, Calendar>
 	{
 		handler.PlatformView.FirstDayOfWeek = (int)virtualView.FirstDayOfWeek;
 	}
-	
+
 	static void MapMinDate(CalendarHandler handler, ICalendarView virtualView)
 	{
 		handler.PlatformView.MinDate = virtualView.MinDate.ToUnixTimeMilliseconds();
@@ -36,7 +36,7 @@ public partial class CalendarHandler : ViewHandler<ICalendarView, Calendar>
 	{
 		handler.PlatformView.MaxDate = virtualView.MaxDate.ToUnixTimeMilliseconds();
 	}
-	
+
 	static void MapSelectedDate(CalendarHandler handler, ICalendarView virtualView)
 	{
 		if (virtualView.SelectedDate is null)
@@ -46,14 +46,14 @@ public partial class CalendarHandler : ViewHandler<ICalendarView, Calendar>
 
 		handler.PlatformView.SetDate(virtualView.SelectedDate.Value.ToUnixTimeMilliseconds(), true, true);
 	}
-	
+
 	void HandleDateChanged(object? sender, Calendar.DateChangeEventArgs e)
 	{
 		PlatformView.DateChange -= HandleDateChanged;
-		
+
 		VirtualView.SelectedDate = new DateTime(e.Year, e.Month + 1, e.DayOfMonth, 0, 0, 0);
 		VirtualView.OnSelectedDateChanged(VirtualView.SelectedDate);
-		
+
 		PlatformView.DateChange += HandleDateChanged;
 	}
 }
