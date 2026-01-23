@@ -3,23 +3,23 @@ namespace HelloMaui;
 partial class ListViewModel : BaseViewModel
 {
 	readonly IDispatcher _dispatcher;
-	
+
 	public ListViewModel(IDispatcher dispatcher)
 	{
 		_dispatcher = dispatcher;
 	}
-	
+
 	public ObservableCollection<LibraryModel> MauiLibraries { get; } = new(CreateLibraries());
-	
-	[ObservableProperty] 
+
+	[ObservableProperty]
 	public partial bool IsRefreshing { get; set; } = true;
-	
+
 	[ObservableProperty]
 	public partial string SearchBarText { get; set; } = string.Empty;
-	
-	[ObservableProperty] 
+
+	[ObservableProperty]
 	public partial bool IsSearchBarEnabled { get; private set; }
-	
+
 	static List<LibraryModel> CreateLibraries() => new()
 	{
 		new()
@@ -104,7 +104,7 @@ partial class ListViewModel : BaseViewModel
 			IsSearchBarEnabled = true;
 		}
 	}
-	
+
 	[RelayCommand]
 	async Task UserStoppedTyping()
 	{

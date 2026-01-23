@@ -18,6 +18,10 @@ $slnFiles | ForEach-Object -Parallel {
     if ($global:hasError) { throw "Stopping due to previous error" }
 
     $slnFile = $_
+
+    Write-Host "Formatting $($slnFile)"
+    dotnet format $slnFile
+    
     try {
         Write-Host "Building solution: $($slnFile)"
         $buildOutput = dotnet build $slnFile 2>&1

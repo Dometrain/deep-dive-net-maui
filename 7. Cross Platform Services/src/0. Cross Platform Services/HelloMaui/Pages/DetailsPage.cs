@@ -6,16 +6,16 @@ class DetailsPage : BaseContentPage<DetailsViewModel>
 	{
 		this.Bind(ContentPage.TitleProperty,
 					getter: (DetailsViewModel vm) => vm.LibraryTitle);
-		
+
 		Shell.SetBackButtonBehavior(this, new BackButtonBehavior()
 		{
 			TextOverride = "List"
 		});
-		
+
 		Content = new VerticalStackLayout
 		{
 			Spacing = 12,
-			
+
 			Children =
 			{
 				new Image()
@@ -37,7 +37,7 @@ class DetailsPage : BaseContentPage<DetailsViewModel>
 					.Font(italic: true, size: 16)
 					.Bind(Label.TextProperty,
 						getter: static (DetailsViewModel vm) => vm.LibraryDescription),
-				
+
 				new Button()
 					.Text("Back")
 					.Bind(Button.CommandProperty,

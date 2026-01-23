@@ -17,13 +17,13 @@ partial class ListViewModel : BaseViewModel
 	}
 
 	public ObservableCollection<LibraryModel> MauiLibraries { get; } = [];
-	
+
 	[ObservableProperty]
 	public partial bool IsRefreshing { get; set; } = false;
 
-	[ObservableProperty] 
+	[ObservableProperty]
 	public partial string SearchBarText { get; set; } = string.Empty;
-	
+
 	[ObservableProperty]
 	public partial bool IsSearchBarEnabled { get; private set; } = true;
 

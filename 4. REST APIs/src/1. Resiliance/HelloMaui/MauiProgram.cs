@@ -27,8 +27,8 @@ public static class MauiProgram
 
 		builder.Services.AddRefitClient<IMauiLibraries>()
 			.ConfigureHttpClient(client => client.BaseAddress = new Uri("https://6dhbgfw1de.execute-api.us-west-1.amazonaws.com"))
-			.AddStandardResilienceHandler(options => options.Retry = new MobileHttpRetryStrategyOptions() );
-			
+			.AddStandardResilienceHandler(options => options.Retry = new MobileHttpRetryStrategyOptions());
+
 		builder.Services.AddSingleton<App>();
 		builder.Services.AddSingleton<AppShell>();
 		builder.Services.AddSingleton<MauiLibrariesApiService>();
@@ -39,7 +39,7 @@ public static class MauiProgram
 
 		return builder.Build();
 	}
-	
+
 	sealed class MobileHttpRetryStrategyOptions : HttpRetryStrategyOptions
 	{
 		public MobileHttpRetryStrategyOptions()

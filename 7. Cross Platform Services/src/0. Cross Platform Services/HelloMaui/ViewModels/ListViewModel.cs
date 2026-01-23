@@ -21,9 +21,9 @@ partial class ListViewModel : BaseViewModel
 		var minimumRefreshTimeTask = Task.Delay(TimeSpan.FromSeconds(1.5));
 
 		var tokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(20));
-		
+
 		var databaseLibraries = await _libraryModelDatabase.GetLibraries(tokenSource.Token).ConfigureAwait(false);
-		
+
 		try
 		{
 			if (!databaseLibraries.Any())
@@ -34,8 +34,8 @@ partial class ListViewModel : BaseViewModel
 					{
 						await _dispatcher.DispatchAsync(() => MauiLibraries.Add(library));
 					}
-				} 
-				
+				}
+
 				await _libraryModelDatabase.InsertAllLibraries(MauiLibraries, tokenSource.Token);
 			}
 		}
@@ -51,13 +51,14 @@ partial class ListViewModel : BaseViewModel
 		}
 	}
 
-	[ObservableProperty] bool _isSearchBarEnabled = true,
+	[ObservableProperty]
+	bool _isSearchBarEnabled = true,
 		_isRefreshing = false;
 
 	[ObservableProperty] string _searchBarText = string.Empty;
 
-	public ListViewModel(IDispatcher dispatcher, 
-							MauiLibrariesApiService mauiLibrariesApiService, 
+	public ListViewModel(IDispatcher dispatcher,
+							MauiLibrariesApiService mauiLibrariesApiService,
 							LibraryModelDatabase libraryModelDatabase,
 							MauiLibrariesGraphQLService librariesGraphQlService)
 	{

@@ -6,4 +6,3 @@ class LibraryModel
 	public string Description { get; init; } = string.Empty;
 	public string ImageSource { get; init; } = "appicon";
 }
-

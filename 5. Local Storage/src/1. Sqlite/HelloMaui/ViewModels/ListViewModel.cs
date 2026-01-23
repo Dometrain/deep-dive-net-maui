@@ -11,7 +11,8 @@ partial class ListViewModel : BaseViewModel
 	readonly MauiLibrariesApiService _mauiLibrariesApiService;
 	readonly LibraryModelDatabase _libraryModelDatabase;
 
-	[ObservableProperty] bool _isSearchBarEnabled = true,
+	[ObservableProperty]
+	bool _isSearchBarEnabled = true,
 		_isRefreshing = false;
 
 	[ObservableProperty] string _searchBarText = string.Empty;
@@ -33,7 +34,7 @@ partial class ListViewModel : BaseViewModel
 		var minimumRefreshTimeTask = Task.Delay(TimeSpan.FromSeconds(1.5));
 
 		var tokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(10));
-		
+
 		var cachedLibraries = await _libraryModelDatabase.GetLibraries(tokenSource.Token).ConfigureAwait(false);
 
 		try

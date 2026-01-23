@@ -11,4 +11,3 @@ public class LibraryModel
 	                                      {nameof(Description)}: {Description}
 	                                      """;
 }
-

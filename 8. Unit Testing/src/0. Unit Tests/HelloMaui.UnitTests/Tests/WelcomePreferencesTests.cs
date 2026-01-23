@@ -9,7 +9,7 @@ class WelcomePreferencesTests : BaseTest
 	{
 		var preferences = Services.Provider.GetRequiredService<IPreferences>();
 		preferences.Clear();
-		
+
 		return base.SetUp();
 	}
 
@@ -17,7 +17,7 @@ class WelcomePreferencesTests : BaseTest
 	{
 		var preferences = Services.Provider.GetRequiredService<IPreferences>();
 		preferences.Clear();
-		
+
 		return base.TearDown();
 	}
 
@@ -32,7 +32,7 @@ class WelcomePreferencesTests : BaseTest
 		// Assert
 		Assert.That(welcomePreferences.IsFirstRun, Is.True);
 	}
-	
+
 	[Test]
 	public void IsFirstRun_ChangingValueToFalse()
 	{
@@ -45,7 +45,7 @@ class WelcomePreferencesTests : BaseTest
 		// Assert
 		Assert.That(welcomePreferences.IsFirstRun, Is.False);
 	}
-	
+
 	[Test]
 	public void IsFirstRun_ChangingValueToFalseThenTrue()
 	{

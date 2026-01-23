@@ -25,7 +25,7 @@ public static class MauiProgram
 
 		builder.Services.AddRefitClient<IMauiLibraries>()
 			.ConfigureHttpClient(client => client.BaseAddress = new Uri("https://6dhbgfw1de.execute-api.us-west-1.amazonaws.com"));
-			
+
 		builder.Services.AddSingleton<App>();
 		builder.Services.AddSingleton<AppShell>();
 		builder.Services.AddSingleton<MauiLibrariesApiService>();

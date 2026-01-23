@@ -7,7 +7,7 @@ abstract class BaseTest
 	{
 		return Task.CompletedTask;
 	}
-	
+
 	[SetUp]
 	public virtual Task SetUp()
 	{
