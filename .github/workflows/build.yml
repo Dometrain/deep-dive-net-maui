@@ -15,16 +15,16 @@ jobs:
         os: [macos-15, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     # Install .NET SDK
     - name: Setup .NET 8.0.x
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '8.x' # Adjust to your required .NET SDK version
 
     - name: Setup .NET 9.0.x
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '9.x' # Adjust to your required .NET SDK version
 
