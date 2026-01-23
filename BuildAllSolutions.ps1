@@ -19,9 +19,6 @@ $slnFiles | ForEach-Object -Parallel {
 
     $slnFile = $_
 
-    Write-Host "Formatting $($slnFile)"
-    dotnet format $slnFile
-    
     try {
         Write-Host "Building solution: $($slnFile)"
         $buildOutput = dotnet build $slnFile 2>&1
