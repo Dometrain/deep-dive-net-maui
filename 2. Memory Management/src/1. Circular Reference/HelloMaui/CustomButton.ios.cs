@@ -4,9 +4,11 @@ namespace HelloMaui;
 
 public class CustomButton : UIButton
 {
+	public UIView? Parent { get; set; }
+	
 	public void Add(CustomButton subview)
 	{
-		subview.Superview = this;
+		subview.Parent = this;
 		AddSubview(subview);
 	}
 }
