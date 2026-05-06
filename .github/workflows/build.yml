@@ -15,7 +15,7 @@ jobs:
   mobile:
     strategy:
       matrix:
-        os: [macos-15, windows-latest]
+        os: [macos-26, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v6
