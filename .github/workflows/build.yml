@@ -9,7 +9,7 @@ on:
       - "*"
 
 env:
-  Xcode_Version: 26.4
+  Xcode_Version: '26.4'
 
 jobs:
   mobile:
